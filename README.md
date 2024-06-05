@@ -68,7 +68,7 @@ Contribuição
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
 Licença
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
+Os direitos estão reservados pelo grupo Blue Clean - 1ESPI. Global Solution 2024, first semester.
 
 Contato
 Se você tiver alguma dúvida ou sugestão, entre em contato:
