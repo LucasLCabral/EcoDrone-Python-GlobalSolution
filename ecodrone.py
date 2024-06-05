@@ -12,7 +12,6 @@ bg_blue = "\033[44m"
 
 # Blue Clean estilizado
 blue_clean = """
-
 ██████╗░██╗░░░░░██╗░░░██╗███████╗  ░█████╗░██╗░░░░░███████╗░█████╗░███╗░░██╗
 ██╔══██╗██║░░░░░██║░░░██║██╔════╝  ██╔══██╗██║░░░░░██╔════╝██╔══██╗████╗░██║
 ██████╦╝██║░░░░░██║░░░██║█████╗░░  ██║░░╚═╝██║░░░░░█████╗░░███████║██╔██╗██║
@@ -22,6 +21,7 @@ blue_clean = """
 """
 
 def print_matriz(matriz):
+    # Imprime a matriz do mar com cores indicando as células de lixo
     for linha in matriz:
         for celula in linha:
             if celula == 1:
@@ -32,13 +32,15 @@ def print_matriz(matriz):
     print()
 
 def find_trash(matriz):
+    # Encontra a posição do lixo na matriz
     for i in range(len(matriz)):
         for j in range(len(matriz[i])):
             if matriz[i][j] == 1:
-                return i, j  # retorna a posição do lixo
-    return None  # retorna nada caso nao encontre lixo
+                return i, j  # Retorna a posição do lixo
+    return None  # Retorna nada caso nao encontre lixo
 
 def simular_temp(matriz):
+    # Simula as temperaturas para cada célula da matriz
     temperaturas = []
     for linha in matriz:
         temp_linha = []
@@ -53,6 +55,7 @@ def simular_temp(matriz):
     return temperaturas  # Retorna a lista completa de temperaturas
 
 def limpar_matriz(matriz, temperaturas, log, num_rodada, coordenadas, dataframes):
+    # Limpa a matriz de lixo, atualiza as temperaturas e registra no log
     todas_as_temperaturas = []
     while True:
         posicao_do_lixo = find_trash(matriz)
@@ -65,7 +68,7 @@ def limpar_matriz(matriz, temperaturas, log, num_rodada, coordenadas, dataframes
             log.append((num_rodada, coordenadas, entrada_log))
             print(f"Lixo encontrado na posição: Coluna {coluna}, Linha {linha} (Temp: {temp:.2f}°C)")
             print("Limpando...")
-            matriz[linha][coluna] = 0
+            matriz[linha][coluna] = 0  # Limpa o lixo da matriz
             time.sleep(1)
             clear_terminal()
             print_matriz(matriz)
@@ -75,18 +78,20 @@ def limpar_matriz(matriz, temperaturas, log, num_rodada, coordenadas, dataframes
     if todas_as_temperaturas:
         df_temperaturas = pd.DataFrame(todas_as_temperaturas, columns=['Temperatura'])
         media_temp = df_temperaturas['Temperatura'].mean()
-        df_temperaturas['Média'] = media_temp
+        df_temperaturas['Média'] = media_temp  # Adiciona a coluna de média ao DataFrame
         entrada_log = f"Média de temperatura na {num_rodada}ª rodada: {media_temp:.2f}°C"
         log.append((num_rodada, coordenadas, entrada_log))
-        dataframes[num_rodada] = df_temperaturas
+        dataframes[num_rodada] = df_temperaturas  # Salva o DataFrame para a rodada
 
 def clear_terminal():
+    # Limpa o terminal
     if os.name == 'nt':  # Windows
         os.system('cls')
     else:  # Linux, MacOs
         os.system('clear')
 
 def show_log(log):
+    # Mostra o log das operações de limpeza.
     if not log:
         print('Sem registros por enquanto')
     else:
@@ -101,6 +106,7 @@ def show_log(log):
     input("Pressione Enter para voltar ao menu principal...")
 
 def show_temperatures(dataframes):
+    # Mostra os DataFrames de temperaturas registrados para cada rodada
     if not dataframes:
         print('Nenhuma rodada foi registrada ainda.')
     else:
@@ -111,6 +117,7 @@ def show_temperatures(dataframes):
     input("Pressione Enter para voltar ao menu principal...")
 
 def salvar_arquivo_log(log):
+    # Salva o log em um arquivo de texto
     if not log:
         print('Sem registros para salvar.')
     else:
@@ -127,11 +134,13 @@ def salvar_arquivo_log(log):
     input("Pressione Enter para voltar ao menu principal...")
 
 def gerar_coordenadas_aleatorias():
+    # Gera coordenadas aleatórias para o drone
     latitude = round(random.uniform(-90, 90), 6)
     longitude = round(random.uniform(-180, 180), 6)
     return latitude, longitude
 
 def main():
+    # Função principal que gerencia o menu e as operações do programa
     log = []
     dataframes = {}
     num_rodada = 0
@@ -167,6 +176,7 @@ def main():
             time.sleep(2)
 
             while True:
+                # Gera a matriz de lixo com valores aleatórios
                 matriz = [[random.choice([0, 1]) for _ in range(colunas)] for _ in range(linhas)]
 
                 temperaturas = simular_temp(matriz)
