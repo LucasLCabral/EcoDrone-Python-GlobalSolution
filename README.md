@@ -2,7 +2,7 @@
 
 EcoDrones é um programa que simula a operação de drones para a limpeza de lixo marinho. O programa gera um "mapa do mar" com lixo distribuído aleatoriamente e permite que o usuário controle o processo de limpeza, registre logs de temperatura e salve os dados em arquivos.
 
-<img src="https://github.com/LucasLCabral/EcoDrone-Python-GlobalSolution/assets/162235385/7a1e6776-8523-49d9-8b99-5791fdeeb75b" alt="drone-simulacao" width="500"/>
+<img src="https://github.com/LucasLCabral/EcoDrone-Python-GlobalSolution/assets/162235385/7a1e6776-8523-49d9-8b99-5791fdeeb75b" alt="drone-simulacao" width="500" align-itens="center"/>
 
 ## Autores:
     Lucas Ludovico Cabral - RM554589
