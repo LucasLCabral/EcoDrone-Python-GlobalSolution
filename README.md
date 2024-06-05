@@ -56,7 +56,7 @@ EcoDrones é um programa que simula a operação de drones para a limpeza de lix
 [4] - Salvar log em arquivo
 [5] - Finalizar programa
 Escolha uma opção: 1
-
+````
 Estrutura do Código
 eco_drones.py: Contém a lógica principal do programa.
 log.txt: Arquivo de log gerado ao salvar o log das operações de limpeza.
