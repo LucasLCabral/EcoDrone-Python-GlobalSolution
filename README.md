@@ -21,7 +21,7 @@ EcoDrones é um programa que simula a operação de drones para a limpeza de lix
 
 1. Clone o repositório para sua máquina local:
     ```sh
-    git clone https://github.com/seu-usuario/ecodrones.git
+    https://github.com/LucasLCabral/EcoDrone-Python-GlobalSolution.git
     ```
 
 2. Navegue até o diretório do projeto:
