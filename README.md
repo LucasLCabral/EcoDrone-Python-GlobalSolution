@@ -6,6 +6,9 @@ EcoDrones é um programa que simula a operação de drones para a limpeza de lix
     <img src="https://github.com/LucasLCabral/EcoDrone-Python-GlobalSolution/assets/162235385/7a1e6776-8523-49d9-8b99-5791fdeeb75b" alt="drone-simulacao" width="500"/>
 </div>
 
+## Video demonstrativo:
+https://youtu.be/VWAIvACGrhU?si=s7wLGY4sDsxg0e0S
+
 ## Autores:
     Lucas Ludovico Cabral - RM554589
     Weslley Oliveira Cardoso - RM557927

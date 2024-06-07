@@ -1,0 +1,5 @@
+Video demonstrativo:
+https://youtu.be/VWAIvACGrhU?si=s7wLGY4sDsxg0e0S
+
+link do repositorio git:
+https://github.com/LucasLCabral/EcoDrone-Python-GlobalSolution
